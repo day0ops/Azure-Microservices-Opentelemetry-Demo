@@ -1,0 +1,15 @@
+version: '3.4'
+
+services:
+  catalog:
+    image: ${DOCKER_REGISTRY-}catalog
+    build:
+      context: .
+      dockerfile: src/Services/Catalog/Dockerfile
+
+  libraryportal:
+    image: ${DOCKER_REGISTRY-}libraryportal
+    build:
+      context: .
+      dockerfile: src/Services/LibraryPortal/Dockerfile
+

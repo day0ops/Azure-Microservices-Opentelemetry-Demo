@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  catalog:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "8001:80"
+
+  libraryportal:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - "ApiSettings:CatalogServiceAddress=http://host.docker.internal:8001"
+    ports:
+      - "8002:80"
+
